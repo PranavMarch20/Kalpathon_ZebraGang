@@ -1,66 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Government Scheme Recommender</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yojana Mitra</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Government Scheme Finder</h1>
-        <form id="userForm">
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender" required>
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
 
-            <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" required />
-            </div>
-
-            <div class="form-group">
-                <label for="state">State</label>
-                <input type="text" id="state" required />
-            </div>
-
-            <div class="form-group">
-                <label for="residence">Residence</label>
-                <select id="residence" required>
-                    <option value="">Select Residence</option>
-                    <option value="Urban">Urban</option>
-                    <option value="Rural">Rural</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="caste">Caste</label>
-                <select id="caste" required>
-                    <option value="">Select Caste</option>
-                    <option value="General">General</option>
-                    <option value="OBC">OBC</option>
-                    <option value="SC">SC</option>
-                    <option value="ST">ST</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="qualification">Qualifications</label>
-                <input type="text" id="qualification" required />
-            </div>
-
-            <button type="submit">Find Eligible Schemes</button>
-        </form>
-
-        <div id="result" class="schemes-container"></div>
+  <header>
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="India Logo" width="60"/>
+      <h2 style="color:#2e7d32;">Yojana <span style="color: black;">Mitra</span></h2>
+      <img src="assets/digital-india-logo.png" alt="Digital India" width="140" style="margin-left: -20px;"/>
     </div>
+    <div class="search-box">
+      <input type="text" placeholder="Enter scheme name to search...">
+    </div>
+  </header>
 
-   <script src="index.js"></script>
+  <section class="hero">
+    <div class="left">
+      <img style="height: 600px; margin-top: -60px;" src="assets/farmer-hero.png" alt="Farmer Image"/>
+    </div>
+    <div class="right">
+      <h1><span>Discover</span> government<br/>schemes for you...</h1>
+      <p>Find Personalised Schemes Based on Eligibility</p>
+      <div class="image-grid">
+        <img src="https://cdn.pixabay.com/photo/2015/07/17/13/44/agriculture-849825_960_720.jpg" alt="Farm"/>
+        <img src="https://cdn.pixabay.com/photo/2018/06/02/17/24/agriculture-3441135_960_720.jpg" alt="Crop"/>
+        <img src="https://cdn.pixabay.com/photo/2015/06/02/06/59/corn-794250_960_720.jpg" alt="Field"/>
+      </div>
+      <br>
+      <button class="cta-button">Find Schemes For You →</button>
+    </div>
+  </section>
+
+  <footer>
+    #GOVERNMENTSCHEMES / #SCHEMESFORYOU
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
