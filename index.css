@@ -46,6 +46,10 @@ body {
 
 /* Navigation Bar */
 .navbar {
+    height: min-content;
+    width: 100%;
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +57,8 @@ body {
     height: var(--nav-height);
     background: var(--bg-color);
     box-shadow: var(--nav-shadow);
-    position: relative;
+    /* position: relative; */
+    z-index: 11;
 }
 
 /* Logo Section */
@@ -478,7 +483,7 @@ main h1 {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 10px var(--color-shadow-light);
-    /* background: #fff; */
+    background: #01dada1b;
     transition: transform 0.3s;
     text-align: center;
 }
