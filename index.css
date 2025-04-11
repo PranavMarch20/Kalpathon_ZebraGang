@@ -1,4 +1,268 @@
 :root {
+    --primary-color: #2dd4bf;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --nav-height: 80px;
+    --nav-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --glass-bg: rgba(255,255,255,0.15);
+}
+
+[data-theme="dark"] {
+    --text-color: #f8f9fa;
+    --bg-color: #121212;
+    --nav-shadow: 0 4px 15px rgba(255,255,255,0.05);
+    --glass-bg: rgba(0,0,0,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    height: var(--nav-height);
+    background: var(--bg-color);
+    box-shadow: var(--nav-shadow);
+    position: relative;
+}
+
+/* Logo Section */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    gap: 5px;
+}
+
+.logo-text span:first-child {
+    color: var(--text-color);
+}
+
+.logo-text span:last-child {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.digital-india-logo {
+    height: 45px;
+    margin-left: 20px;
+}
+
+/* Search Container */
+.search-container {
+    flex: 0 1 700px;
+    margin: 0 4%;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 50px;
+    border: none;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.search-input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Navigation Controls */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.language-selector {
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 500;
+    appearance: none;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--glass-bg);
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--bg-color);
+    padding: 30px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: var(--transition);
+    backdrop-filter: blur(15px);
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 0 5%;
+    }
+    
+    .search-container {
+        margin: 0 3%;
+    }
+}
+
+@media (max-width: 992px) {
+    .search-container,
+    .nav-controls {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .digital-india-logo {
+        display: none;
+    }
+
+    .mobile-menu .search-container {
+        display: block;
+        margin: 25px 0;
+    }
+
+    .mobile-menu .nav-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .mobile-menu .language-selector {
+        width: 100%;
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+
+    .mobile-menu .theme-toggle {
+        font-size: 1.3rem;
+        padding: 15px 25px;
+        width: 100%;
+        text-align: left;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .main-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .mobile-menu {
+        width: 260px;
+        padding: 25px;
+    }
+}
+
+
+:root {
     --color-background-main: #ffffff;
     --color-accent: #2dd4bf;
     --color-text-dark: #1e1e1e;

@@ -18,24 +18,60 @@
     />
   </head>
   <body>
-    <header class="Navbar">
-      <div class="logo-section">
-        <img src="assets/logo.png" alt="India Logo" width="40" />
-        <h2 style="color: black">
-          Yojana <span style="color: #2dd4bf">Mitra</span>
-        </h2>
-        <img
-          src="assets/digital-india-logo.png"
-          alt="Digital India"
-          width="120"
-          style="margin-left: -20px"
-        />
+    <nav class="navbar">
+      <div class="logo-group">
+          <img src="assets/logo.png" alt="Main Logo" class="main-logo">
+          <div class="logo-text">
+              <span>Yojana</span>
+              <span>Mitra</span>
+          </div>
+          <img src="assets/digital-india-logo.svg" alt="Digital India" class="digital-india-logo">
       </div>
-      <div class="search-box">
-        <input type="text" placeholder="Enter scheme name to search..." />
-      </div>
-    </header>
 
+      <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search schemes...">
+          <i class="fas fa-search search-icon"></i>
+      </div>
+
+      <div class="nav-controls">
+          <select class="language-selector">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+          </select>
+          <button class="theme-toggle" aria-label="Toggle theme">
+              <i class="fas fa-moon"></i>
+          </button>
+      </div>
+
+      <button class="hamburger" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+      </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+      <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search schemes...">
+          <i class="fas fa-search search-icon"></i>
+      </div>
+
+      
+      
+      <div class="nav-controls">
+          <select class="language-selector">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+          </select>
+          <button class="theme-toggle">
+              <i class="fas fa-moon"></i> Dark Mode
+          </button>
+      </div>
+  </div>
+  <div class="menu-backdrop"></div>
+
+
+  <!-- main content <section></section> -->
+   
     <div class="gradient"></div>
     <section class="hero">
       <div class="left">
