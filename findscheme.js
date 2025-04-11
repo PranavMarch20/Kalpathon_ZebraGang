@@ -76,25 +76,39 @@ form.addEventListener('submit', async function(event) {
     };
 
     const prompt = `
-    User Details:
-    - Gender: ${formData.gender}
-    - Age: ${formData.age}
-    - State: ${formData.state}
-    - Residence: ${formData.residence}
-    - Caste: ${formData.caste}
-    - Qualification: ${formData.qualification}
+    User Profile:
+- Gender: ${formData.gender}
+- Age: ${formData.age}
+- Income: ₹${formData.income}
+- Nationality: ${formData.nationality}
+- State: ${formData.state}
+- Residence Type: ${formData.residence}
+- Caste Category: ${formData.caste}
+- Qualification Level: ${formData.qualification}
 
-    Recommend Indian government schemes in this EXACT format for each scheme:
-    - Scheme Name: [Name]
-    - Ministry: [Ministry/Department]
-    - Description: [1-2 line description]
-    - Benefits: [Key benefits]
-    - Application Process: [Online/Offline] [Link if available]
-    - Tags: [comma-separated tags]
+Your Task:
+1. Recommend ALL government schemes from myscheme.gov.in that this user is ELIGIBLE for.
+2. Only include schemes listed on https://www.myscheme.gov.in/ or directly derived from that portal and any other official portal to find eligible scheme provided by government of India.
+3. DO NOT include any scheme where the user is not eligible based on the provided information.
+4. Apply strict eligibility filters — use age, gender, income, education, caste, residence, and state to determine eligibility.
+5. Provide the MAXIMUM number of matching schemes. Be exhaustive.
+6. DO NOT provide any irrelevant or random schemes.
+7.recomend minimum 10 govenment scheme if possible 
 
-    Provide 3-5 most relevant schemes. Be extremely concise.
-    `;
+Output Format (Strictly follow this format for each scheme):
+---
+- Scheme Name: [Exact name of the scheme]
+- Ministry: [Ministry or Department name]
+- Description: [Short summary (1-2 lines)]
+- Benefits: [Key benefits for the user]
+- Application Process: [Online/Offline] [Add link if available]
+- Tags: [Relevant tags — like state-specific, women, SC/ST, student, rural, etc.]
+---
 
+Important:
+- Refer only to myscheme.gov.in-based schemes.
+- Do NOT provide any extra explanation or text. Only show matching schemes in the above format.
+`;
     try {
         const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAIapNLiVEq59EFs-Pscf4_pq89b8UilaY', {
             method: 'POST',
