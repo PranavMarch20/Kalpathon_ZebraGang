@@ -397,7 +397,7 @@ header {
 }
 
 .cta-button {
-    width: 20vw;
+    min-width: 20vw;
     background-color: var(--color-accent);
     color: var(--color-white);
     border: none;
@@ -539,6 +539,8 @@ main h1 {
     .hero {
         flex-direction: column;
         text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .right {

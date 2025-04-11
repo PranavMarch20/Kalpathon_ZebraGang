@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yojana Mitra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2dd4bf;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --nav-height: 80px;
+            --nav-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --glass-bg: rgba(255,255,255,0.15);
+            --color-background-main: #ffffff;
+            --color-accent: #2dd4bf;
+            --color-text-dark: #1e1e1e;
+            --color-border: #ccc;
+            --color-shadow-light: rgba(0, 0, 0, 0.05);
+            --color-text-muted: #1c0e0e84;
+            --color-white: white;
+            --color-accent-dark: #2dac9b;
+            --color-shadow-medium: rgba(0, 0, 0, 0.1);
+            --color-tab-bg: #e0f6ea;
+            --color-tab-active: #b5f0cd;
+        }
+
+        [data-theme="dark"] {
+            --color-background-main: #000000;
+            --color-white: rgb(0, 26, 28);
+            --color-text-dark: #f9eaea;
+            --color-text-muted: #f6e2e281;
+            --bg-color: rgb(0, 26, 28);
+            --text-color: #f8f9fa;
+            /* --bg-color: #121212; */
+            --nav-shadow: 0 4px 15px rgba(255,255,255,0.05);
+            --glass-bg: rgba(0,0,0,0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .form-container {
+            background-color: var(--color-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px var(--color-shadow-light), 0 2px 4px -1px var(--color-shadow-light);
+            padding: 2rem;
+            width: 100%;
+            max-width: 32rem;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-label span {
+            font-size: 0.875rem;
+            font-medium: 500;
+            color: var(--color-text-muted);
+        }
+
+        .gender-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .gender-button {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-medium: 500;
+            color: var(--color-text-dark);
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gender-button:hover {
+            background-color: #f9fafb;
+        }
+
+        .gender-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+            border-color: transparent;
+        }
+
+        .gender-button.selected {
+            background-color: #eff6ff;
+            border-color: #60a5fa;
+            color: #1e40af;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .gender-button span {
+            margin-right: 0.25rem;
+        }
+
+        .age-dropdown {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            color: var(--color-text-dark);
+            focus:outline-none;
+            width: 100%;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .age-dropdown:focus {
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+            border-color: transparent;
+        }
+
+        .age-label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .age-error {
+            font-size: 0.75rem;
+            color: #dc2626;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .next-button {
+            background-color: #16a34a;
+            color: var(--color-white);
+            border-radius: 0.375rem;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            focus: outline-none;
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.5);
+            border-radius: 0.375rem;
+        }
+
+        .next-button:hover {
+            background-color: #15803d;
+        }
+
+        .next-button:focus {
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.5);
+        }
+
+        .reset-button {
+            color: #4b5563;
+            font-size: 0.875rem;
+            font-medium: 500;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .reset-button:hover {
+            text-decoration: underline;
+        }
+
+        .error-border {
+            border-color: #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="form-container">
+        <h1 class="form-title">Help us find the best schemes for you</h1>
+
+        <div class="form-group">
+            <div class="form-label">
+                <span>*Tell us about yourself, you are a...</span>
+            </div>
+            <div class="gender-buttons">
+                <button class="gender-button">
+                    <span class="mr-1">♂</span> Male
+                </button>
+                <button class="gender-button">
+                    <span class="mr-1">♀</span> Female
+                </button>
+                <button class="gender-button">
+                    <span class="mr-1">⚧</span> Transgender
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-label">
+                <span>*and your age is...</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <select id="age-dropdown" class="age-dropdown">
+                    <option value="">Please select your age</option>
+                </select>
+                <span class="age-label">years</span>
+            </div>
+            <p id="age-error" class="age-error">Please select your age!</p>
+        </div>
+
+        <div class="form-actions">
+            <button id="next-button" class="next-button">
+                Next →
+            </button>
+            <button id="reset-button" class="reset-button">
+                Reset Form
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const genderButtons = document.querySelectorAll('.gender-button');
+        const ageDropdown = document.getElementById('age-dropdown');
+        const nextButton = document.getElementById('next-button');
+        const resetButton = document.getElementById('reset-button');
+        const ageError = document.getElementById('age-error');
+
+        // Populate age dropdown
+        for (let i = 18; i <= 100; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            ageDropdown.appendChild(option);
+        }
+
+        // Gender button selection
+        genderButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                genderButtons.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Next button validation
+        nextButton.addEventListener('click', function() {
+            let genderSelected = false;
+            genderButtons.forEach(button => {
+                if (button.classList.contains('selected')) {
+                    genderSelected = true;
+                }
+            });
+
+            if (!genderSelected || !ageDropdown.value) {
+                if (!genderSelected) {
+                    genderButtons.forEach(button => button.classList.add('error-border'));
+                }
+                if (!ageDropdown.value) {
+                    ageError.style.display = 'block';
+                    ageDropdown.classList.add('error-border');
+                }
+            } else {
+                // Proceed to the next step of the form or show a message
+                alert('Form submitted! (Next step would be implemented here)');
+            }
+        });
+
+        // Reset button functionality
+        resetButton.addEventListener('click', function() {
+            genderButtons.forEach(button => {
+                button.classList.remove('selected', 'error-border');
+            });
+            ageDropdown.value = '';
+            ageError.style.display = 'none';
+            ageDropdown.classList.remove('error-border');
+        });
+
+        // Clear error on age dropdown change
+        ageDropdown.addEventListener('change', function() {
+            ageError.style.display = 'none';
+            ageDropdown.classList.remove('error-border');
+        });
+    </script>
+</body>
+</html>
