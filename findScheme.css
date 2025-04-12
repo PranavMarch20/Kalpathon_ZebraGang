@@ -11,13 +11,13 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background-color);
-    padding: 10px;
+    /* background: var(--background-color); */
+    /* padding: 10px; */
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
 }
 
@@ -94,7 +94,7 @@ button:hover {
 }
 
 .scheme-card {
-    background: white;
+    /* background: white; */
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -128,7 +128,7 @@ button:hover {
 }
 
 .tag {
-    background: #e8f4fd;
+    /* background: #e8f4fd; */
     color: var(--secondary-color);
     padding: 6px 12px;
     border-radius: 20px;
@@ -157,4 +157,14 @@ button:hover {
     padding: 20px;
     font-size: 1.2rem;
     color: var(--primary-color);
+}
+
+.gradient {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-white);
+    background: radial-gradient(125% 125% at 50% 10%, var(--color-white) 40%, var(--color-accent) 100%);
+    z-index: -2;
 }
