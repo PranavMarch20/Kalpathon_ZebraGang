@@ -6,15 +6,7 @@
 }
 
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background: var(--background-color); */
-    /* padding: 10px; */
-    line-height: 1.6;
-}
+
 
 .container {
     /* max-width: 1200px; */
@@ -55,7 +47,15 @@ label {
     font-weight: 700;
 }
 
-
+input,
+select {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
 
 input:focus,
 select:focus {
@@ -90,7 +90,7 @@ button:hover {
 }
 
 .scheme-card {
-    background: white;
+    /* background: white; */
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -163,15 +163,4 @@ button:hover {
     background-color: var(--color-white);
     background: radial-gradient(125% 125% at 50% 10%, var(--color-white) 40%, var(--color-accent) 100%);
     z-index: -2;
-}
-
-
-input,
-select {
-    width: 90%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
 }

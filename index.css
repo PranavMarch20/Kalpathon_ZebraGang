@@ -564,3 +564,22 @@ main h1 {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
 }
+
+
+
+body > .skiptranslate {
+    display: none !important;
+  }
+
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+
+  body {
+    top: 0px !important;
+    position: static !important;
+  }
+
+  iframe[id^=":"] {
+    display: none !important;
+  }
