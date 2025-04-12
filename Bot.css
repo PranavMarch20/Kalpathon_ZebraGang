@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
-@import 'index.css';
-=======
->>>>>>> Stashed changes
+
 body {
     font-family: 'Segoe UI', sans-serif;
     /* background: #2dd4bf; */
@@ -9,18 +6,11 @@ body {
   }
   
   #chatbot-icon {
-<<<<<<< Updated upstream
     
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #16a491;
-=======
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #38239e;
->>>>>>> Stashed changes
     color: white;
     font-size: 26px;  
     padding: 10px 14px;
@@ -33,14 +23,9 @@ body {
   .chat-container {
     width: 420px;
     height: 520px;
-<<<<<<< Updated upstream
     background: #85d7ccd2;
     
     /* background: #ffffff; */
-=======
-    /* background: #c6bcff; */
-    background: #C68EFD;
->>>>>>> Stashed changes
 
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -107,11 +92,7 @@ body {
   button {
     padding: 12px 20px;
     /* background: #8f7cfc; */
-<<<<<<< Updated upstream
     background: #0ecfb5;
-=======
-    background: #a448ff;
->>>>>>> Stashed changes
 
     color: white;
     border: 0.5px solid rgb(66, 66, 66);
@@ -121,11 +102,7 @@ body {
   }
   
   button:hover {
-<<<<<<< Updated upstream
     background: #3db1b3;
-=======
-    background: #7c16e1;
->>>>>>> Stashed changes
   }
   
   .msg.bot {
