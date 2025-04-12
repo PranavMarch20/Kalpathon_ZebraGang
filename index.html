@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Bot.css">
 
   </head>
   <body>
@@ -160,7 +161,32 @@
         </main>
       </div>
     </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gov Scheme Chatbot</title>
+  <link rel="stylesheet" href="Bot.css">
+</head>
+<body>
+
+<!-- Bot Icon (floating toggle) -->
+<div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+<!-- Floating Chatbot Window -->
+<div class="chat-container" id="chatbot-window">
+  <div class="chat-box" id="chatBox">
+    <div class="msg bot">Hi! Ask me about government schemes.</div>
+  </div>
+  <div class="input-area">
+    <input type="text" id="userInput" placeholder="Type your question..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
 
     <script src="index.js"></script>
+    <script src="Bot.js"></script>
   </body>
 </html>
