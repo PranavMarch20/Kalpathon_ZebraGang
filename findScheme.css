@@ -1,7 +1,7 @@
 @import 'index.css';
 :root {
     --primary-color: #2c3e50;
-    --secondary-color: #3498db;
+    --secondary-color: #2dd4bf;
     --background-color: #f8f9fa;
 }
 
@@ -19,6 +19,7 @@ body {
 .container {
     /* max-width: 1200px; */
     margin: 0 auto;
+    margin-top: 120px;
 }
 
 .container h1 {
@@ -31,10 +32,12 @@ body {
 form {
     max-width: 600px;
     margin: 40px auto;
-    padding: 30px;
-    background: white;
+    padding: 25px;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #158879;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
@@ -83,10 +86,11 @@ button {
 }
 
 button:hover {
-    background: #2980b9;
+    background: #158879;
 }
 
 .schemes-container {
+    margin: 100px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;

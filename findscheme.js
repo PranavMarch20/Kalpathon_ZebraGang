@@ -101,7 +101,7 @@ Output Format (Strictly follow this format for each scheme):
 - Ministry: [Ministry or Department name]
 - Description: [Short summary (1-2 lines)]
 - Benefits: [Key benefits for the user]
-- Application Process: [Online/Offline] [Add link if available]
+- Application Process: [Online/Offline] [Details about how to apply]
 - Tags: [Relevant tags — like state-specific, women, SC/ST, student, rural, etc.]
 ---
 
