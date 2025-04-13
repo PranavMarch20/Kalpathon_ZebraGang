@@ -354,8 +354,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 150px;
-
+    padding-top: 210px;
     z-index: 10;
 }
 
@@ -371,7 +370,7 @@ header {
 }
 
 .right h1 {
-    font-size: 3.4rem;
+    font-size: 4rem;
     color: var(--color-text-dark);
     padding-bottom: 20px;
     text-align: center;
@@ -379,6 +378,7 @@ header {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    line-height: 1.1;
 }
 
 .right h1 span {
@@ -394,6 +394,7 @@ header {
     margin-bottom: 30px;
     font-size: 1.2rem;
     text-align: center;
+    line-height: 1.5;
 }
 
 .cta-button {
@@ -467,16 +468,18 @@ main h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    margin: 40px 0;
+    margin-top: 40px;
+    margin-bottom: 65px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 40px;
+    margin-bottom: 55px;
 }
 
 .category {
@@ -583,3 +586,38 @@ body > .skiptranslate {
   iframe[id^=":"] {
     display: none !important;
   }
+
+
+
+.search-container {
+    max-width: 400px;
+}
+
+
+.skiptranslate > span{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.skiptranslate {
+    color: transparent !important;
+    text-shadow: 0 0 0 var(--color-white) !important;
+}
+
+
+select {
+    max-width: 90%;
+    padding: 12px;
+    color: var(--text-color);
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}

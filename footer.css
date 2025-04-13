@@ -1,15 +1,15 @@
 .myscheme-footer {
-    background-color: #232138;
+    background-color: #141414;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
-    padding: 40px 20px 10px;
+    padding: 40px 120px ;
   }
   
   .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
   }
   
   .footer-section {
@@ -41,7 +41,7 @@
   }
   
   .highlight {
-    color: #77ff77;
+    color: #2dd4bf;
     font-weight: bold;
   }
   
