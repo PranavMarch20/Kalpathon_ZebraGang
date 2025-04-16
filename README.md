@@ -40,10 +40,11 @@ The goal is to make government benefits more accessible to common people through
 
 ## 📈 Future Plans
 
-- Add **language translation** support (Hindi, Tamil, Bengali, etc.)
-- Improve **prompt engineering** for more accurate results
+- Add **language translation** support for more local languages
+- Improve **prompt engineering** for more accurate results or using official  government data api for realtime updated data
 - Convert to full-stack using **Node.js / Express** or **Flask**
-- Add **voice support** for visually impaired users
+- Add **voice search/navigation support** for visually impaired users
+- Adding a authentication page for user data security and verfication
 
 ---
 
@@ -59,9 +60,18 @@ Want to help? You can contribute in:
 
 ## 🙋‍♂️ Creator
 
-**Developed by Priyanshu**  
-Student | Learner | Tech Explorer  
-_“Tech for Bharat, built by students!”_
+**Developed by Team Zebra -**  
+- Pranav Kumar Singh
+- Priyanshu Kumar Prasad
+- Prashant Singh
+- Pranshu Rai
+- Priyanshu Kumar
+
+`For Problem statememt` -
+
+    Smart Analysis of Government Schemes Awareness
+
+_Many citizens are unaware of government welfare schemes they are eligible for. How can AI analyse user data (income, region, education) to identify suitable schemes and raise awareness in_ **local languages**? 
 
 ---
 
@@ -70,16 +80,3 @@ _“Tech for Bharat, built by students!”_
 This project started as a college hackathon idea but has the potential to help **millions** if expanded well!
 
 ---
-
-Smart Analysis of Government Schemes Awareness  
-
-Many citizens are unaware of government welfare schemes they are eligible for.How can AI analyse user data (income, region, education) to identify suitable schemes and raise awareness in local languages? 
-
-TEAM-: ZEBRA
-
-TEAM MEMBERS-:
-Pranav Kumar SIngh,
-Priyanshu Kumar Prasad,
-Prashant Singh,
-Pranshu Rai,
-Priyanshu Kumar
