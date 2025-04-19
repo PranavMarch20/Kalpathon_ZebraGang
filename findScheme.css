@@ -1,9 +1,9 @@
 @import 'index.css';
-:root {
+/* :root {
     --primary-color: #2c3e50;
     --secondary-color: #2dd4bf;
     --background-color: #f8f9fa;
-}
+} */
 
 .container {
     /* max-width: 1200px; */
@@ -163,16 +163,4 @@ button:hover {
     z-index: -2;
 }
 
-.search-container {
-    max-width: 400px;
-}
 
-.skiptranslate > span{
-    display: none !important;
-    visibility: hidden !important;
-}
-
-.skiptranslate {
-    color: transparent !important;
-    text-shadow: 0 0 0 var(--color-white) !important;
-}
